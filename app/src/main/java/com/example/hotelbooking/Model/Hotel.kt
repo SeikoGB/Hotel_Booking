@@ -1,4 +1,4 @@
-package com.example.hotelbooking
+package com.example.hotelbooking.Model
 
 class Hotel(
     val name:String,
@@ -6,7 +6,7 @@ class Hotel(
     val reviews_num:Int,
     val price_pernight:Int,
     val main_photo:Int,
-    val isFavourite:Boolean,
+    val isBooked:Boolean,
     val rating:Double,
     val description:String,
     val isHotels:Boolean,

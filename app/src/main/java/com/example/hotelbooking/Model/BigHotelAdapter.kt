@@ -1,4 +1,4 @@
-package com.example.hotelbooking
+package com.example.hotelbooking.Model
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotelbooking.R
 
 class BigHotelAdapter(var array:MutableList<Hotel>):RecyclerView.Adapter<BigHotelAdapter.MyHolder>() {
     class MyHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
@@ -31,6 +32,6 @@ class BigHotelAdapter(var array:MutableList<Hotel>):RecyclerView.Adapter<BigHote
         holder.hotel_name.text=temp.name
         holder.hotel_location.text=temp.location
         holder.reyting.text=temp.rating.toString()
-        holder.hotel_price.text=temp.price_pernight.toString()
+        holder.hotel_price.text="$"+temp.price_pernight.toString()
     }
 }

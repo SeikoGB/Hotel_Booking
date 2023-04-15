@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.hotelbooking.Model.Hotel
 import com.example.hotelbooking.databinding.FragmentMenuBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +36,8 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         var binding=FragmentMenuBinding.inflate(inflater,container,false)
-        var Emeralda=Hotel("Emeralda Da Hotel","Paris,France",3244,29,R.drawable.hotel1_mini,false,
+        var Emeralda= Hotel("Emeralda Da Hotel","Paris,France",3244,29,
+            R.drawable.hotel1_mini,false,
             4.8,"Lorem",true,true,true,true)
 
 
