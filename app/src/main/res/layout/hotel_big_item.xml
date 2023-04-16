@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/cl"
-        android:background="@drawable/hotel2_mini"
-        >
+        android:background="@drawable/hotel2_mini">
 
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"

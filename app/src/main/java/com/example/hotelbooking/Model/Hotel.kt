@@ -6,7 +6,7 @@ class Hotel(
     val reviews_num:Int,
     val price_pernight:Int,
     val main_photo:Int,
-    val isBooked:Boolean,
+    var isBooked:Boolean,
     val rating:Double,
     val description:String,
     val isHotels:Boolean,

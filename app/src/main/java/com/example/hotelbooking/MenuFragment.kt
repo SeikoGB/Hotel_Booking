@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.hotelbooking.Model.BigHotelAdapter
 import com.example.hotelbooking.Model.Hotel
 import com.example.hotelbooking.databinding.FragmentMenuBinding
 
@@ -36,12 +38,21 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         var binding=FragmentMenuBinding.inflate(inflater,container,false)
-        var Emeralda= Hotel("Emeralda Da Hotel","Paris,France",3244,29,
+        var BigHotels= mutableListOf<Hotel>()
+
+        for (i in 0..10)
+        {
+            Hotel("Emeralda Da Hotel","Paris,France",3244,29,
             R.drawable.hotel1_mini,false,
             4.8,"Lorem",true,true,true,true)
-
-
-
+            Hotel("President Hotel","Paris,France",4546,33,
+                R.drawable.hotel2_mini,true,
+                4.8,"Lorem",true,true,true,true)
+        }
+        var BigHotelManager= GridLayoutManager(this.requireContext(),2)
+        var bigHotelAdapter=BigHotelAdapter(BigHotels)
+        binding.bigHotelRv.layoutManager=BigHotelManager
+        binding.bigHotelRv.adapter=bigHotelAdapter
         return binding.root
     }
 

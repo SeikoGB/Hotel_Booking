@@ -164,7 +164,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="150dp"
                 android:text="See all"
-                android:textColor=""
+                android:textColor="@color/teal_200"
+                android:backgroundTint="#002AC31F"
                 android:textSize="13dp"
                 />
 

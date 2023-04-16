@@ -18,7 +18,6 @@ class MiniHotelAdapter(var array:MutableList<Hotel>): RecyclerView.Adapter<MiniH
         var miniHotelIsBooked=itemView.findViewById<MaterialButton>(R.id.mini_hotel_isBooked)
         var miniHotelReveiws=itemView.findViewById<TextView>(R.id.mini_hotel_review)
         var miniHotelRating=itemView.findViewById<TextView>(R.id.mini_hotel_rating)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
@@ -38,9 +37,12 @@ class MiniHotelAdapter(var array:MutableList<Hotel>): RecyclerView.Adapter<MiniH
         holder.miniHotelPrice.text="$"+temp.price_pernight
         holder.miniHotelRating.text=temp.rating.toString()
         holder.miniHotelReveiws.text=temp.reviews_num.toString()+"reviews"
+        holder.miniHotelIsBooked.setOnClickListener {
+            temp.isBooked=true;
+        }
         if (temp.isBooked){
             holder.miniHotelIsBooked.setIconResource(R.drawable.baseline_bookmark_24)
         }
-
+        notifyDataSetChanged()
     }
 }
