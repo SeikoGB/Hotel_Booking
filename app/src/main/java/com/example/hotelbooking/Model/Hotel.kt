@@ -7,11 +7,12 @@ class Hotel(
     val price_pernight:Int,
     val main_photo:Int,
     var isBooked:Boolean,
+    var photo:Int,
     val rating:Double,
     val description:String,
     val isHotels:Boolean,
     val isBathroom2:Boolean,
-    val is4Bathroom:Boolean,
+    var is4Bathroom:Boolean,
     val is4000sqft:Boolean
-    ) {
+    ):java.io.Serializable {
 }

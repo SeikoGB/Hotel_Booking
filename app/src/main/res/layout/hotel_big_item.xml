@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     app:cardCornerRadius="30dp"
-    android:layout_height="400dp"
+    android:layout_height="360dp"
+    android:id="@+id/big_hotel_card"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,15 +47,14 @@
             android:id="@+id/hotel_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="204dp"
             android:text="Emerald De Hotel"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:layout_marginTop="230dp"
-            android:layout_marginLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-           />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/location"
