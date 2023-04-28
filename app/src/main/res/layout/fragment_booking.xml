@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the date for booking"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/booking_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></TextView>
+
+    <EditText
+        android:id="@+id/days_amount"
+        android:layout_width="279dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter amount of day"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/days_amount"
+        app:layout_constraintEnd_toEndOf="@+id/days_amount"
+        app:layout_constraintStart_toStartOf="@+id/days_amount"></TextView>
+
+    <EditText
+        android:id="@+id/booking_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.MaterialCalendar.Day"
+        app:layout_constraintBottom_toTopOf="@+id/days_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Book"
+        android:backgroundTint="@color/teal_200"
+        android:id="@+id/to_book"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/days_amount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

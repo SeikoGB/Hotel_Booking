@@ -41,39 +41,64 @@ class MenuFragment : Fragment() {
             R.drawable.hotel2_mini,true,R.drawable.hotel2, 4.8,"Lorem",true,true,true,true))
 
         }
-        var categories= mutableListOf<Category>()
 
-        for (i in 0..3){
-            categories.add(Category(BigHotels,"Popular"))
-            categories.add(Category(BigHotels,"Trending"))
+        var anotherHotels= mutableListOf<Hotel>()
+        for (i in 0..5){
+            anotherHotels.add(Hotel("Royal Hotel","Amserdam,Netherlad",3377,31,R.drawable.hotel3_mini,true,R.drawable.hotel3_mini,4.3,"Lorem",true,false
+            ,true,true))
         }
-        var CategoriesManager=GridLayoutManager(this.requireContext(),1,LinearLayoutManager.HORIZONTAL,false)
-        var CategoriesAdapter=CategoryAdapter(categories)
-        binding.categoryRv.layoutManager=CategoriesManager
-        binding.categoryRv.adapter=CategoriesAdapter
-
+        var categories= mutableListOf<Category>()
         var BigHotelManager= GridLayoutManager(this.requireContext(),1,LinearLayoutManager.HORIZONTAL, false)
         var bigHotelAdapter=BigHotelAdapter(BigHotels,object :BigHotelAdapter.onClick{
             override fun setOnClick(temp: Hotel) {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.main, HotelFragment.newInstance(temp))
+                    .replace(R.id.main_bottom, HotelFragment.newInstance(temp))
                     .commit()
-
             }
         })
         binding.bigHotelRv.layoutManager=BigHotelManager
         binding.bigHotelRv.adapter=bigHotelAdapter
 
+        for (i in 0..3){
+            categories.add(Category(anotherHotels,"Popular",false))
+            categories.add(Category(BigHotels,"Trending",false))
+        }
+        var CategoriesManager=GridLayoutManager(this.requireContext(),1,LinearLayoutManager.HORIZONTAL,false)
+        var CategoriesAdapter=CategoryAdapter(categories,object:CategoryAdapter.onClick{
+            override fun setOnClick(temp: Category) {
+                for (i in categories){
+                    i.isChecked=false
+                }
+                temp.isChecked=true
+                var categoryBigAdapter=BigHotelAdapter(temp.hotels,object :BigHotelAdapter.onClick{
+                    override fun setOnClick(temp: Hotel) {
+                        parentFragmentManager.beginTransaction()
+                            .replace(R.id.main_bottom, HotelFragment.newInstance(temp))
+                            .commit()
+                    }
+                })
+                binding.bigHotelRv.adapter=categoryBigAdapter
+            }
+
+        })
+        binding.categoryRv.layoutManager=CategoriesManager
+        binding.categoryRv.adapter=CategoriesAdapter
+
+
+
+
         var miniHotelManager=GridLayoutManager(this.requireContext(),1,LinearLayoutManager.VERTICAL,false)
         var miniHotelAdapter=MiniHotelAdapter(BigHotels,object:MiniHotelAdapter.onClick{
             override fun setOnClick(temp: Hotel) {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.main, HotelFragment.newInstance(temp))
+                    .replace(R.id.main_bottom, HotelFragment.newInstance(temp))
                     .commit()
             }
         })
         binding.miniHotelRv.layoutManager=miniHotelManager
         binding.miniHotelRv.adapter=miniHotelAdapter
+
+
 
         return binding.root
     }

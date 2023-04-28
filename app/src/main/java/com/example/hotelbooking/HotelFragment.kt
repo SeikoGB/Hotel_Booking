@@ -37,6 +37,13 @@ class HotelFragment : Fragment() {
         binding.image.setBackgroundResource(param1!!.main_photo)
         binding.price.text="$"+param1!!.price_pernight
 
+
+        binding.buy.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.main_bottom,
+                BookingFragment.newInstance(param1!!.price_pernight))
+                .commit()
+        }
+
         return binding.root
     }
 

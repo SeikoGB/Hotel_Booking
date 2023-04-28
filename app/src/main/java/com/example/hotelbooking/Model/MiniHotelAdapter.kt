@@ -54,4 +54,10 @@ class MiniHotelAdapter(var array:MutableList<Hotel>,var onclick: onClick): Recyc
     interface onClick{
         fun setOnClick(temp:Hotel){}
     }
+
+    fun setList(flist:MutableList<Hotel>){
+        array =flist
+        notifyDataSetChanged()
+    }
+
 }

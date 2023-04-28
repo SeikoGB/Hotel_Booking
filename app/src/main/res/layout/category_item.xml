@@ -6,11 +6,13 @@
     android:layout_marginLeft="3dp"
     android:layout_marginRight="4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/category_item"
     android:backgroundTint="@color/white"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/category_back"
         android:background="@drawable/box"
         >
 
@@ -21,7 +23,7 @@
             android:id="@+id/category_name"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:textColor="#76CD93"
+            android:textColor="@color/teal_200"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
